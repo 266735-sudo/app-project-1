@@ -21,42 +21,42 @@
     </body>
 </html>
 
+
+
 <!DOCTYPE html>
-<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Heads or Tails</title>
-  <link rel="stylesheet" href="main.css" />
+  <link rel="stylesheet" href="main.css">
 </head>
 <body>
-  <div class="container">
-    <h1>Heads or Tails</h1>
-    <img id="coin" src="images/tossimage.png" alt="Coin" />
-    <button id="tossBtn">
-      <img src="images/clickimage.png" alt="Toss Coin" />
-    </button>
-  </div>
+
+  <h1>Welcome, Press the Button to Spin!
+</h1>
+
+  <img id="coin" src="images/tossimage.png" alt="Coin" width="200">
+
+  <br>
+  <button id="tossBtn">
+    <img src="images/clickimage.png" alt="Toss Coin" width="100">
+  </button>
 
   <script>
-    const coin = document.getElementById('coin');
-    const tossBtn = document.getElementById('tossBtn');
-    const images = {
-      head: 'images/headimage.png',
-      tail: 'images/tailimage.png',
-      toss: 'images/tossimage.png'
-    };
 
-    tossBtn.addEventListener('click', () => {
-      coin.src = images.toss; // reset to toss image
-      coin.classList.add('spin'); // add animation
 
-      setTimeout(() => {
-        const result = Math.random() < 0.5 ? 'head' : 'tail';
-        coin.src = images[result];
-        coin.classList.remove('spin');
-      }, 1000); // simulate toss delay
+
+const coin = document.getElementById("coin");
+    const tossBtn = document.getElementById("tossBtn");
+
+  tossBtn.addEventListener("click", function() {
+      const result = Math.random() < 0.5 ? "head" : "tail";
+
+   if (result === "head") {
+        coin.src = "images/headimage.png";
+   } else {
+        coin.src = "images/tailimage.png";
+      }
     });
   </script>
 </body>
 </html>
+
