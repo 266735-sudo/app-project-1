@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        <script src="" async defer></script>
+    </body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Heads or Tails</title>
+  <link rel="stylesheet" href="main.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Heads or Tails</h1>
+    <img id="coin" src="images/tossimage.png" alt="Coin" />
+    <button id="tossBtn">
+      <img src="images/clickimage.png" alt="Toss Coin" />
+    </button>
+  </div>
+
+  <script>
+    const coin = document.getElementById('coin');
+    const tossBtn = document.getElementById('tossBtn');
+    const images = {
+      head: 'images/headimage.png',
+      tail: 'images/tailimage.png',
+      toss: 'images/tossimage.png'
+    };
+
+    tossBtn.addEventListener('click', () => {
+      coin.src = images.toss; // reset to toss image
+      coin.classList.add('spin'); // add animation
+
+      setTimeout(() => {
+        const result = Math.random() < 0.5 ? 'head' : 'tail';
+        coin.src = images[result];
+        coin.classList.remove('spin');
+      }, 1000); // simulate toss delay
+    });
+  </script>
+</body>
+</html>
